@@ -5,9 +5,15 @@ import { pb } from "../../lib/pocketbase";
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
+const localImages = [
+  require("../../../assets/getir/1.jpg"),
+  require("../../../assets/getir/2.jpg"),
+  require("../../../assets/getir/3.jpg"),
+  require("../../../assets/getir/4.jpg"),
+];
+
 export default function () {
-  const [sliders, setSliders] = useState<SliderProps[]>([]);
-  const [error, setError] = useState<any>(null);
+  const [sliders, setSliders] = useState(localImages);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const onViewRef = useRef(({ viewableItems }: any) => {
@@ -18,37 +24,19 @@ export default function () {
 
   const viewConfigRef = useRef({ viewAreaCoveragePercentThreshold: 50 });
 
-  useEffect(() => {
-    const fetchSliders = async () => {
-      try {
-        const records = await pb
-          .collection("sliders")
-          .getFullList<SliderProps>({
-            sort: "-created",
-          });
-        setSliders(records);
-      } catch (error: any) {
-        setError(error.message);
-        console.error("Error fetching sliders: ", error);
-        console.error("Error details: ", JSON.stringify(error, null, 2));
-      }
-    };
-    fetchSliders();
-  }, []);
-
   return (
     <FlatList
       data={sliders}
       renderItem={({ item }) => (
         <View style={{ width: screenWidth, height: screenHeight * 0.32 }}>
           <Image
-            source={{
-              uri: `${apiUrl}/${item.collectionId}/${item.id}/${item.image}`,
-            }}
+            source={item}
             style={{ flex: 1, width: null, height: null, resizeMode: "cover" }}
           />
         </View>
       )}
+      horizontal
+      keyExtractor={(item, index) => index.toString()}
     ></FlatList>
   );
 }

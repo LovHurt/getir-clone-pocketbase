@@ -1,0 +1,1 @@
+const apiUrl = "https://alica.pockethost.io";
