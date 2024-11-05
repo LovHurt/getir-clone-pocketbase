@@ -5,7 +5,8 @@ import HomeScreen from "../screens/HomeScreen";
 import SearchScreen from "../screens/SearchScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import GiftScreen from "../screens/GiftScreen";
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
+import CustomBarNavigation from "./CustomBarNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +34,16 @@ const BottomNavigator = () => {
         component={SearchScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="search-outline" size={24} color={color} />
+            <Feather name="search" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Getir"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <CustomBarNavigation />
           ),
         }}
       />
