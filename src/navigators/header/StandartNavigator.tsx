@@ -54,7 +54,7 @@ export default function StandartNavigator({
           ),
           headerRight: () => (
             <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Cart")}
               className="bg-white p-2 m-2 h-8 flex-row rounded-xl items-center justify-center"
             >
               <Image
