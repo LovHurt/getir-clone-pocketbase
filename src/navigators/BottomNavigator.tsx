@@ -7,6 +7,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 import GiftScreen from "../screens/GiftScreen";
 import { Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
 import CustomBarNavigation from "./CustomBarNavigation";
+import HomeNavigator from "./header/HomeNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ const BottomNavigator = () => {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="home" size={24} color={color} />
@@ -39,8 +40,8 @@ const BottomNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Getir"
-        component={SearchScreen}
+        name="CustomBar"
+        component={CustomBarNavigation}
         options={{
           tabBarIcon: ({ color }) => (
             <CustomBarNavigation />
