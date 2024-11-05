@@ -14,12 +14,12 @@ export interface UserProps {
   
   export interface CategoryProps {
     id: string;
-    collectionId: string;
-    collectionName: string;
-    created: string;
-    updated: string;
+    collectionId?: string;
+    collectionName?: string;
+    created?: string;
+    updated?: string;
     name: string;
-    image: string;
+    image: any;
   }
 
   export interface SubCategoryProps {

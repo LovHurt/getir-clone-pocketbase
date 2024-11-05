@@ -4,14 +4,25 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../../screens/HomeScreen";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import HeaderCartRight from "./part/HeaderCartRight";
+import HeaderLeftBack from "./part/HeaderLeftBack";
 
+type RootStackParamList = {
+  Home: undefined;
+  Cart: undefined;
+  [key: string]: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 interface StandartNavigatorProps {
   component: React.ComponentType<any>;
   name: string;
   logo?: boolean;
   textTitle?: string;
 }
-const Stack = createStackNavigator();
+
+type NavigationProps = StackNavigationProp<RootStackParamList, "Home">;
 
 export default function StandartNavigator({
   component,
@@ -19,7 +30,7 @@ export default function StandartNavigator({
   logo,
   textTitle,
 }: StandartNavigatorProps) {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProps>();
 
   return (
     <Stack.Navigator>
@@ -29,14 +40,7 @@ export default function StandartNavigator({
         options={{
           headerStyle: { backgroundColor: "#5c3ebc" },
           headerTitleAlign: "center",
-          headerLeft: () => (
-            <TouchableOpacity
-              className="m-2"
-              onPress={() => navigation.goBack()}
-            >
-              <Entypo name="chevron-left" size={24} color="white" />
-            </TouchableOpacity>
-          ),
+          headerLeft: () => <HeaderLeftBack />,
           headerTitle: () => (
             <View>
               {logo ? (
@@ -52,20 +56,7 @@ export default function StandartNavigator({
               )}
             </View>
           ),
-          headerRight: () => (
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Cart")}
-              className="bg-white p-2 m-2 h-8 flex-row rounded-xl items-center justify-center"
-            >
-              <Image
-                source={require("../../../assets/cart.png")}
-                className="w-5 h-7 p-2"
-              />
-              <View className="flex flex-col bg-[#f3effe] h-7 items-center justify-center">
-                <Text>{"\u20BA"}555</Text>
-              </View>
-            </TouchableOpacity>
-          ),
+          headerRight: () => <HeaderCartRight />,
         }}
       />
     </Stack.Navigator>
