@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         getirColor : "#5D38BE",
+        getirColor2: "#7849f7",
         getirBg : "#f5f5f5"
       }
     },

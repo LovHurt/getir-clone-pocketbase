@@ -4,7 +4,7 @@ import { CategoryProps } from "../../../types";
 import { pb } from "../../lib/pocketbase";
 import CategoryItem from "./CategoryItem";
 
-const localCategories = [
+export const localCategories = [
     { id: "1", image: require("../../../assets/getir/categories/1.png"), name: "Discount" },
     { id: "2", image: require("../../../assets/getir/categories/2.png"), name: "Drinks" },
     { id: "3", image: require("../../../assets/getir/categories/3.png"), name: "Fruits" },
