@@ -24,12 +24,12 @@ export interface UserProps {
 
   export interface SubCategoryProps {
     id: string;
-    collectionId: string;
-    collectionName: string;
-    created: string;
-    updated: string;
+    collectionId?: string;
+    collectionName?: string;
+    created?: string;
+    updated?: string;
     name: string;
-    category: string;
+    category?: string;
   }
   
   export interface SliderProps {

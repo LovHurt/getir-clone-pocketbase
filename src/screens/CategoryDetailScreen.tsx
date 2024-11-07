@@ -3,6 +3,7 @@ import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import { CategoryProps } from '../../types';
 import CategoryFilter from '../components/CategoryFilter';
+import SubCategoryFilter from '../components/SubCategoryFilter';
 
 export default function CategoryDetailScreen() {
     const route = useRoute();
@@ -12,6 +13,7 @@ export default function CategoryDetailScreen() {
   return (
     <View>
       <CategoryFilter category={category}/>
+      <SubCategoryFilter category={category}/>
       <Text>{category.name}</Text>
     </View>
   )
