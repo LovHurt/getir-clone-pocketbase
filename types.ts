@@ -43,15 +43,10 @@ export interface UserProps {
 
   export interface ProductProps {
     id: string;
-    collectionId: string;
-    collectionName: string;
-    created: string;
-    updated: string;
-    name:string;
-    image: string[];
-    price: number,
-    sellingPrice: number,
-    type: string;
-    category: string;
-    subcategory: string;
+    name: string;
+    price: number;
+    sellingPrice: number;
+    type: 'gram' | 'adet';
+    images?: string[];
+    subcategoryId: string;
   }
