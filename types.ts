@@ -46,7 +46,7 @@ export interface UserProps {
     name: string;
     price: number;
     sellingPrice: number;
-    type: 'gram' | 'adet';
+    type: string;
     images?: string[];
     subcategoryId: string;
   }

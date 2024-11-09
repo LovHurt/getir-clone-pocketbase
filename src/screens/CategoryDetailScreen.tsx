@@ -4,6 +4,7 @@ import { useRoute } from "@react-navigation/native";
 import { CategoryProps } from "../../types";
 import CategoryFilter from "../components/CategoryFilter";
 import SubCategoryFilter from "../components/SubCategoryFilter";
+import ProductList from "../components/product/ProductList";
 
 export default function CategoryDetailScreen() {
   const route = useRoute();
@@ -24,7 +25,8 @@ export default function CategoryDetailScreen() {
       category={{...category, id:selectedCategory}}
       onSubCategorySelect={(subcategoryId)=>setSelectedCategory(subcategoryId)} 
       />
-      <Text>{category.name}</Text>
+
+      <ProductList categoryId={selectedCategory} subCategoryId={selectedSubCategory} />
     </View>
   );
 }
