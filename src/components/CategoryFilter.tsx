@@ -9,15 +9,20 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 interface CategoryFilterProps {
   category: CategoryProps;
+  onCategorySelect: (categoryId: string) => void;
 }
 
-export default function CategoryFilter({ category }: CategoryFilterProps) {
+export default function CategoryFilter({
+  category,
+  onCategorySelect,
+}: CategoryFilterProps) {
   const [ctegories, setCtegories] = useState<CategoryProps[]>([]);
   const [error, setError] = useState(null);
+  const [activeCategory, setActiveCategory] = useState<string>(category.id);
 
   return (
     <ScrollView
-      className="w-full bg-getirColor2 px-4"
+      className="w-full bg-getirColor2 px-4 text-white"
       horizontal={true}
       bounces={true}
       showsHorizontalScrollIndicator={false}
@@ -25,10 +30,13 @@ export default function CategoryFilter({ category }: CategoryFilterProps) {
     >
       {categories.map((item) => (
         <CategoryBox
-          active={category.name}
+          active={activeCategory === item.id}
           key={item.id}
-          item={item.name}
-          onPress={(itemName) => console.log(`clicked ${itemName}`)}
+          item={item}
+          onPress={() => {
+            setActiveCategory(item.id);
+            onCategorySelect(item.id);
+          }}
         />
       ))}
     </ScrollView>

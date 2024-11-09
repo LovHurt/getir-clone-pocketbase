@@ -8,10 +8,13 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 interface SubCategoryFilterProps {
   category: CategoryProps;
+  onSubCategorySelect : (subcategoryId: string) => void;
+
 }
 
 export default function SubCategoryFilter({
   category,
+  onSubCategorySelect
 }: SubCategoryFilterProps) {
   const [subCategories, setSubCategories] = useState<SubCategoryProps[]>([]);
   const [error, setError] = useState<string | null>(null);

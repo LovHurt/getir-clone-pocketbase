@@ -11,7 +11,7 @@ export const products = [
     sellingPrice: 80,
     type: "adet",
     images: [
-    //   require("../../../assets/products/summer-discount-1.png"),
+    "../../../assets/products/summer-discount-1.png",
     //   require("../../../assets/products/summer-discount-2.png"),
     ],
     subcategoryId: "1-1", // Seasonal Discounts
