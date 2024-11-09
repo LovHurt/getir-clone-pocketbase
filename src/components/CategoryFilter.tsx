@@ -26,7 +26,7 @@ export default function CategoryFilter({
       horizontal={true}
       bounces={true}
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ height: screenHeight * 0.1 }}
+      contentContainerStyle={{ height: screenHeight * 0.075 }}
     >
       {categories.map((item) => (
         <CategoryBox

@@ -1,54 +1,50 @@
-// src/data/products.ts
-
-import { ProductProps } from '../../types';
-
 export const products = [
   // Category 1: Discount (1-1, 1-2, 1-3)
   {
     id: "104",
-    name: "Summer Discount",
+    name: "Bluetooth Airpods",
     price: 100,
     sellingPrice: 80,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/tech",
-      "https://loremflickr.com/320/240/electronics"
+      require("../../assets/getir/products/kulak1.jpg"),
+      require("../../assets/getir/products/kulak2.jpg"),
     ],
     subcategoryId: "1-1",
   },
   {
     id: "105",
-    name: "Midnight Sale",
+    name: "Best Smart Phone",
     price: 150,
     sellingPrice: 120,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/tech",
-      "https://loremflickr.com/320/240/electronics"
+      require("../../assets/getir/products/iphone1.jpg"),
+      require("../../assets/getir/products/iphone2.jpg"),
     ],
     subcategoryId: "1-2",
   },
   {
     id: "106",
-    name: "Limited Stock",
+    name: "Gamer Mouse",
     price: 200,
     sellingPrice: 160,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/gadgets",
-      "https://loremflickr.com/320/240/tech"
+      require("../../assets/getir/products/mouse1.webp"),
+      require("../../assets/getir/products/mouse2.webp"),
     ],
     subcategoryId: "1-3",
   },
   {
     id: "107",
-    name: "Winter Sale",
+    name: "Gamer Airpods",
     price: 120,
     sellingPrice: 95,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/earbuds",
-      "https://loremflickr.com/320/240/electronics"
+      require("../../assets/getir/products/kulaklık1.webp"),
+      require("../../assets/getir/products/kulaklık2.webp"),
     ],
     subcategoryId: "1-1",
   },
@@ -56,13 +52,13 @@ export const products = [
   // Category 2: Drinks (2-1, 2-2, 2-3)
   {
     id: "108",
-    name: "Soda",
+    name: "Soda Water",
     price: 10,
     sellingPrice: 8,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/drink",
-      "https://loremflickr.com/320/240/soda"
+      require("../../assets/getir/products/soda1.jpg"),
+      require("../../assets/getir/products/soda2.jpg"),
     ],
     subcategoryId: "2-1",
   },
@@ -73,8 +69,8 @@ export const products = [
     sellingPrice: 18,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/juice",
-      "https://loremflickr.com/320/240/fruit"
+      require("../../assets/getir/products/juice1.jpg"),
+      require("../../assets/getir/products/juice2.jpg"),
     ],
     subcategoryId: "2-2",
   },
@@ -85,8 +81,8 @@ export const products = [
     sellingPrice: 12,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/water",
-      "https://loremflickr.com/320/240/bottle"
+      require("../../assets/getir/products/petsu.jpg"),
+      require("../../assets/getir/products/petsu2.jpg"),
     ],
     subcategoryId: "2-3",
   },
@@ -97,8 +93,8 @@ export const products = [
     sellingPrice: 20,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/energy",
-      "https://loremflickr.com/320/240/drink"
+      require("../../assets/getir/products//enerji1.jpg"),
+      require("../../assets/getir/products/enerji2.jpg"),
     ],
     subcategoryId: "2-1",
   },
@@ -111,8 +107,8 @@ export const products = [
     sellingPrice: 45,
     type: "gram",
     images: [
-      "https://loremflickr.com/320/240/apple",
-      "https://loremflickr.com/320/240/fruit"
+      require("../../assets/getir/products/apple1.jpg"),
+      require("../../assets/getir/products/apple2.jpg"),
     ],
     subcategoryId: "3-1",
   },
@@ -123,8 +119,8 @@ export const products = [
     sellingPrice: 180,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/honey",
-      "https://loremflickr.com/320/240/bees"
+      require("../../assets/getir/products/honey1.jpg"),
+      require("../../assets/getir/products/honey2.jpg"),
     ],
     subcategoryId: "3-2",
   },
@@ -135,8 +131,8 @@ export const products = [
     sellingPrice: 50,
     type: "gram",
     images: [
-      "https://loremflickr.com/320/240/banana",
-      "https://loremflickr.com/320/240/tropical"
+      require("../../assets/getir/products/banana1.jpg"),
+      require("../../assets/getir/products/banana2.jpg"),
     ],
     subcategoryId: "3-3",
   },
@@ -147,12 +143,12 @@ export const products = [
     sellingPrice: 60,
     type: "gram",
     images: [
-      "https://loremflickr.com/320/240/strawberry",
-      "https://loremflickr.com/320/240/berries"
+      require("../../assets/getir/products/strawbery1.jpg"),
+      require("../../assets/getir/products/strawbery2.jpg"),
     ],
     subcategoryId: "3-2",
   },
-  
+
   // Category 4: Bread (4-1, 4-2, 4-3)
   {
     id: "116",
@@ -161,8 +157,8 @@ export const products = [
     sellingPrice: 25,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/bread",
-      "https://loremflickr.com/320/240/grain"
+      require("../../assets/getir/products/bread1.jpg"),
+      require("../../assets/getir/products/bread2.jpg"),
     ],
     subcategoryId: "4-1",
   },
@@ -173,8 +169,8 @@ export const products = [
     sellingPrice: 28,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/bread",
-      "https://loremflickr.com/320/240/bakery"
+      require("../../assets/getir/products/bread3.jpg"),
+      require("../../assets/getir/products/bread4.jpg"),
     ],
     subcategoryId: "4-2",
   },
@@ -185,8 +181,8 @@ export const products = [
     sellingPrice: 20,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/baguette",
-      "https://loremflickr.com/320/240/bakery"
+      require("../../assets/getir/products/baget1.jpg"),
+      require("../../assets/getir/products/baget2.jpg"),
     ],
     subcategoryId: "4-3",
   },
@@ -197,8 +193,8 @@ export const products = [
     sellingPrice: 35,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/bread",
-      "https://loremflickr.com/320/240/glutenfree"
+      require("../../assets/getir/products/bread5.jpg"),
+      require("../../assets/getir/products/bread6.jpg"),
     ],
     subcategoryId: "4-1",
   },
@@ -211,8 +207,8 @@ export const products = [
     sellingPrice: 18,
     type: "gram",
     images: [
-      "https://loremflickr.com/320/240/spaghetti",
-      "https://loremflickr.com/320/240/pasta"
+      require("../../assets/getir/products/spagetti1.jpg"),
+      require("../../assets/getir/products/spagetti2.jpg"),
     ],
     subcategoryId: "5-1",
   },
@@ -223,8 +219,8 @@ export const products = [
     sellingPrice: 16,
     type: "gram",
     images: [
-      "https://loremflickr.com/320/240/penne",
-      "https://loremflickr.com/320/240/pasta"
+      require("../../assets/getir/products/penne2.jpg"),
+      require("../../assets/getir/products/penne1.jpg"),
     ],
     subcategoryId: "5-2",
   },
@@ -235,8 +231,8 @@ export const products = [
     sellingPrice: 20,
     type: "gram",
     images: [
-      "https://loremflickr.com/320/240/macaroni",
-      "https://loremflickr.com/320/240/pasta"
+      require("../../assets/getir/products/macaroni1.jpg"),
+      require("../../assets/getir/products/macaroni2.jpg"),
     ],
     subcategoryId: "5-3",
   },
@@ -249,8 +245,8 @@ export const products = [
     sellingPrice: 8,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/chocolate",
-      "https://loremflickr.com/320/240/sweets"
+      require("../../assets/getir/products/chocolate2.jpg"),
+      require("../../assets/getir/products/chocolate1.jpg"),
     ],
     subcategoryId: "6-1",
   },
@@ -261,8 +257,8 @@ export const products = [
     sellingPrice: 12,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/gummybears",
-      "https://loremflickr.com/320/240/sweets"
+      require("../../assets/getir/products/bear2.jpg"),
+      require("../../assets/getir/products/bear1.jpg"),
     ],
     subcategoryId: "6-2",
   },
@@ -275,8 +271,8 @@ export const products = [
     sellingPrice: 20,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/icecream",
-      "https://loremflickr.com/320/240/dessert"
+      require("../../assets/getir/products/vanillaice1.jpg"),
+      require("../../assets/getir/products/vanillaice2.jpg"),
     ],
     subcategoryId: "7-1",
   },
@@ -289,8 +285,8 @@ export const products = [
     sellingPrice: 12,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/milk",
-      "https://loremflickr.com/320/240/dairy"
+      require("../../assets/getir/products/milk1.jpg"),
+      require("../../assets/getir/products/milk2.jpg"),
     ],
     subcategoryId: "8-1",
   },
@@ -301,8 +297,8 @@ export const products = [
     sellingPrice: 30,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/yogurt",
-      "https://loremflickr.com/320/240/dairy"
+      require("../../assets/getir/products/yogurt1.jpg"),
+      require("../../assets/getir/products/yogurt2.jpg"),
     ],
     subcategoryId: "8-1",
   },
@@ -314,8 +310,8 @@ export const products = [
     sellingPrice: 35,
     type: "gram",
     images: [
-      // require("../../../assets/products/cereals-1.png"),
-      // require("../../../assets/products/cereals-2.png"),
+      require("../../assets/getir/products/cereals1.jpg"),
+      require("../../assets/getir/products/cereals2.jpg"),
     ],
     subcategoryId: "9-1", // Cereals
   },
@@ -328,8 +324,8 @@ export const products = [
     sellingPrice: 18,
     type: "adet",
     images: [
-      // require("../../../assets/products/chocolate-chip-cookies-1.png"),
-      // require("../../../assets/products/chocolate-chip-cookies-2.png"),
+      require("../../assets/getir/products/cookie2.jpg"),
+      require("../../assets/getir/products/cookie1.jpg"),
     ],
     subcategoryId: "10-1", // Chocolate Chip
   },
@@ -342,8 +338,8 @@ export const products = [
     sellingPrice: 45,
     type: "adet",
     images: [
-      // require("../../../assets/products/protein-bars-1.png"),
-      // require("../../../assets/products/protein-bars-2.png"),
+      require("../../assets/getir/products/bar1.jpg"),
+      require("../../assets/getir/products/bar2.jpg"),
     ],
     subcategoryId: "11-1", // Protein Bars
   },
@@ -356,8 +352,8 @@ export const products = [
     sellingPrice: 90,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/skincare",
-      "https://loremflickr.com/320/240/cosmetics"
+      require("../../assets/getir/products/cream2.jpg"),
+      require("../../assets/getir/products/cream1.jpg"),
     ],
     subcategoryId: "12-1",
   },
@@ -370,8 +366,8 @@ export const products = [
     sellingPrice: 70,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/dogfood",
-      "https://loremflickr.com/320/240/pet"
+      require("../../assets/getir/products/dog2.jpg"),
+      require("../../assets/getir/products/dog1.jpg"),
     ],
     subcategoryId: "13-1",
   },
@@ -384,35 +380,21 @@ export const products = [
     sellingPrice: 50,
     type: "unit",
     images: [
-      "https://loremflickr.com/320/240/diapers",
-      "https://loremflickr.com/320/240/baby"
+      require("../../assets/getir/products/diaper2.jpg"),
+      require("../../assets/getir/products/diaper1.jpg"),
     ],
     subcategoryId: "14-1",
-  },
-
-  // Category 15: Sexual Health (15-1, 15-2, 15-3)
-  {
-    id: "134",
-    name: "Kondom",
-    price: 25,
-    sellingPrice: 20,
-    type: "adet",
-    images: [
-      "https://loremflickr.com/320/240/condom"
-    ],
-    subcategoryId: "15-1", // Condoms
   },
 
   // Category 16: Cleaning (16-1, 16-2, 16-3)
   {
     id: "135",
-    name: "Yüzey Temizleyici",
+    name: "Surface Cleaner",
     price: 35,
     sellingPrice: 30,
     type: "adet",
     images: [
-      // require("../../../assets/products/surface-cleaner-1.png"),
-      // require("../../../assets/products/surface-cleaner-2.png"),
+      require("../../assets/getir/products/clean1.jpg"),
     ],
     subcategoryId: "16-1", // Surface Cleaners
   },
@@ -420,13 +402,12 @@ export const products = [
   // Category 17: Tech (17-1, 17-2, 17-3)
   {
     id: "136",
-    name: "Kulaklık",
+    name: "Airlops",
     price: 150,
     sellingPrice: 130,
     type: "adet",
     images: [
-      // require("../../../assets/products/headphones-1.png"),
-      // require("../../../assets/products/headphones-2.png"),
+      require("../../assets/getir/products/airpods1.jpg"),
     ],
     subcategoryId: "17-1", // Headphones
   },
@@ -434,13 +415,12 @@ export const products = [
   // Category 18: Home (18-1, 18-2, 18-3)
   {
     id: "137",
-    name: "Mobilya Seti",
+    name: "Furniture",
     price: 1000,
     sellingPrice: 900,
     type: "adet",
     images: [
-      // require("../../../assets/products/furniture-set-1.png"),
-      // require("../../../assets/products/furniture-set-2.png"),
+      require("../../assets/getir/products/furniture1.jpg"),
     ],
     subcategoryId: "18-1", // Furniture
   },

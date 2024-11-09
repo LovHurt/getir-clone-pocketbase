@@ -41,7 +41,7 @@ export default function SubCategoryFilter({
       horizontal={true}
       bounces={true}
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ height: screenHeight * 0.1 }}
+      contentContainerStyle={{ height: screenHeight * 0.075 }}
     >
       {subCategories.map((sub) => (
         <SubCategoryBox

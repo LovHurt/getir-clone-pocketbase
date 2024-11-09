@@ -24,11 +24,7 @@ export default function ProductItem({ product }: ProductItemProps) {
     >
       {product.images && product.images[0] && (
         <Image
-          source={
-            typeof product.images[0] === "string"
-              ? { uri: product.images[0] }
-              : product.images[0]
-          }
+          source={product.images[0]}
           style={{ width: screenWidth * 0.23, height: screenHeight * 0.18 }}
           resizeMode="cover"
         />
@@ -46,12 +42,16 @@ export default function ProductItem({ product }: ProductItemProps) {
         {product.type == "unit" ? "1" : "1000"} {product.type}
       </Text>
 
-      <TouchableOpacity style= {{
-        top:-7, right:-7, width:30, height:30
-      }}
-      className="absolute border rounded-full flex-row justify-center items-center bg-white"
+      <TouchableOpacity
+        style={{
+          top: -7,
+          right: -7,
+          width: 30,
+          height: 30,
+        }}
+        className="absolute border rounded-full flex-row justify-center items-center bg-white"
       >
-        <Entypo name="plus" size={22} color="#5d3ebd"/>
+        <Entypo name="plus" size={22} color="#5d3ebd" />
       </TouchableOpacity>
     </TouchableOpacity>
   );

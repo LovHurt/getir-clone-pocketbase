@@ -50,10 +50,11 @@ export default function ProductList({
     );
   }
 
-  if (filteredProducts.length === 0) {
+  if (filteredProducts.length < 1) {
+    console.log(filteredProducts)
     return (
-      <View style={styles.center}>
-        <Text>Hiç ürün bulunamadı.</Text>
+      <View className="flex items-center mt-24">
+        <Text className="font-semibold">An item linked to this subcategory can not be found!</Text>
       </View>
     );
 }
@@ -112,9 +113,10 @@ const styles = StyleSheet.create({
       padding: 10,
     },
     center: {
-      flex: 1,
+      flex: 2,
       justifyContent: "center",
       alignItems: "center",
+      color:'black'
     },
     errorText: {
       color: "red",

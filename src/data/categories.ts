@@ -13,7 +13,6 @@ export const categories = [
     { id: "12", image: require("../../assets/getir/categories/12.png"), name: "Personal Care" },
     { id: "13", image: require("../../assets/getir/categories/13.png"), name: "Animal" },
     { id: "14", image: require("../../assets/getir/categories/14.png"), name: "Baby" },
-    { id: "15", image: require("../../assets/getir/categories/15.png"), name: "Sexual Health" },
     { id: "16", image: require("../../assets/getir/categories/16.png"), name: "Cleaning" },
     { id: "17", image: require("../../assets/getir/categories/17.png"), name: "Tech" },
     { id: "18", image: require("../../assets/getir/categories/18.png"), name: "Home" },
