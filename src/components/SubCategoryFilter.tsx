@@ -45,11 +45,11 @@ export default function SubCategoryFilter({
     >
       {subCategories.map((sub) => (
         <SubCategoryBox
-          active={sub.name === activeSubCategory}
+          active={sub.id === activeSubCategory}
           key={sub.id}
-          onPress={(itemName) => {
-            setActiveSubCategory(itemName);
-            console.log(`sub clicked ${itemName}`);
+          onPress={() => {
+            setActiveSubCategory(sub.id);
+            onSubCategorySelect(sub.id);
           }}
           item={sub.name}
         ></SubCategoryBox>

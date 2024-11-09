@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 
 interface SubCategoryBoxProps {
-  active: any;
+  active: boolean;
   item: string;
   onPress: (item: string) => void;
 }

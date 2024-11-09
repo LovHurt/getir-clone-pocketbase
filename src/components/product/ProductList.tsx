@@ -61,7 +61,7 @@ export default function ProductList({
   return (
      <FlatList
       data={filteredProducts}
-      className="flex"
+      className="flex mb-20"
       numColumns={3}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => <ProductItem product={item} />}

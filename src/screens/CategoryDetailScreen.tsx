@@ -23,9 +23,8 @@ export default function CategoryDetailScreen() {
       }} />
       <SubCategoryFilter 
       category={{...category, id:selectedCategory}}
-      onSubCategorySelect={(subcategoryId)=>setSelectedCategory(subcategoryId)} 
+      onSubCategorySelect={(subcategoryId)=>setSelectedSubCategory(subcategoryId)} 
       />
-
       <ProductList categoryId={selectedCategory} subCategoryId={selectedSubCategory} />
     </View>
   );
