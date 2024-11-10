@@ -8,39 +8,56 @@ import CartNavigator from "./header/CartNavigator";
 import CategoryDetailScreen from "../screens/CategoryDetailScreen";
 import HeaderLeftBack from "./header/part/HeaderLeftBack";
 import HeaderCartRight from "./header/part/HeaderCartRight";
+import useAuth from "../hooks/useAuth";
+import LoginScreen from "../screens/LoginScreen";
+import RegisterScreen from "../screens/RegisterScreen";
 
 const Stack = createStackNavigator();
 
 export default function AppNavigator() {
+  const { user } = useAuth();
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="BottomTabs" component={BottomNavigator} />
-      <Stack.Screen name="Cart">{() => <CartNavigator />}</Stack.Screen>
-
-      <Stack.Screen
-        name="CategoryDetail"
-        component={CategoryDetailScreen}
-        options={{
-          headerShown: true,
-          headerStyle:{backgroundColor:"#5c3ebc"},
-          headerTitleAlign:'center',
-          headerTitle: () => (
-            <View>
-              <Image
-                resizeMode="contain"
-                className="w-16 h-8"
-                source={require("../../assets/logo.png")}
-              />
-            </View>
-          ),
-          headerLeft:()=>(
-            <HeaderLeftBack/>
-          ),
-          headerRight: ()=>(
-            <HeaderCartRight/>
-          )
-        }}
-      ></Stack.Screen>
+      {user ? (
+        <>
+          <Stack.Screen name="BottomTabs" component={BottomNavigator} />
+          <Stack.Screen name="Cart">{() => <CartNavigator />}</Stack.Screen>
+          <Stack.Screen
+            name="CategoryDetail"
+            component={CategoryDetailScreen}
+            options={{
+              headerShown: true,
+              headerStyle: { backgroundColor: "#5c3ebc" },
+              headerTitleAlign: "center",
+              headerTitle: () => (
+                <View>
+                  <Image
+                    resizeMode="contain"
+                    className="w-16 h-8"
+                    source={require("../../assets/logo.png")}
+                  />
+                </View>
+              ),
+              headerLeft: () => <HeaderLeftBack />,
+              headerRight: () => <HeaderCartRight />,
+            }}
+          ></Stack.Screen>
+        </>
+      ) : (
+        <>
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Register"
+            component={RegisterScreen}
+            options={{ headerShown: false }}
+          />
+        </>
+      )}
     </Stack.Navigator>
   );
 }
