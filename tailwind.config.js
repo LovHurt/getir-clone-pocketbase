@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         getirColor : "#5D38BE",
         getirColor2: "#7849f7",
-        getirBg : "#f5f5f5"
+        getirBg : "#f5f5f5",
+        getirText:"#ffd10d"
       }
     },
   },
