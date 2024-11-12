@@ -3,6 +3,7 @@ export const products = [
   {
     id: "104",
     name: "Bluetooth Airpods",
+    description: "High-quality Bluetooth Airpods for a seamless audio experience.",
     price: 100,
     sellingPrice: 80,
     type: "unit",
@@ -15,6 +16,7 @@ export const products = [
   {
     id: "105",
     name: "Best Smart Phone",
+    description: "Latest smartphone with advanced features and high performance.",
     price: 150,
     sellingPrice: 120,
     type: "unit",
@@ -27,6 +29,7 @@ export const products = [
   {
     id: "106",
     name: "Gamer Mouse",
+    description: "Precision gaming mouse with customizable buttons and high DPI.",
     price: 200,
     sellingPrice: 160,
     type: "unit",
@@ -39,6 +42,7 @@ export const products = [
   {
     id: "107",
     name: "Gamer Airpods",
+    description: "Designed for gamers, with immersive sound and long-lasting battery.",
     price: 120,
     sellingPrice: 95,
     type: "unit",
@@ -53,6 +57,7 @@ export const products = [
   {
     id: "108",
     name: "Soda Water",
+    description: "Refreshing soda water, perfect for any time of the day.",
     price: 10,
     sellingPrice: 8,
     type: "unit",
@@ -65,6 +70,7 @@ export const products = [
   {
     id: "109",
     name: "Fruit Juice",
+    description: "Delicious fruit juice made from natural ingredients.",
     price: 20,
     sellingPrice: 18,
     type: "unit",
@@ -77,6 +83,7 @@ export const products = [
   {
     id: "110",
     name: "Mineral Water",
+    description: "Pure mineral water, sourced from natural springs.",
     price: 15,
     sellingPrice: 12,
     type: "unit",
@@ -89,11 +96,12 @@ export const products = [
   {
     id: "111",
     name: "Energy Drink",
+    description: "Boost your energy with this refreshing energy drink.",
     price: 25,
     sellingPrice: 20,
     type: "unit",
     images: [
-      require("../../assets/getir/products//enerji1.jpg"),
+      require("../../assets/getir/products/enerji1.jpg"),
       require("../../assets/getir/products/enerji2.jpg"),
     ],
     subcategoryId: "2-1",
@@ -103,6 +111,7 @@ export const products = [
   {
     id: "112",
     name: "Organic Apple",
+    description: "Fresh organic apples, perfect for a healthy snack.",
     price: 50,
     sellingPrice: 45,
     type: "gram",
@@ -115,6 +124,7 @@ export const products = [
   {
     id: "113",
     name: "Natural Honey",
+    description: "Pure natural honey, a healthy and sweet addition to your diet.",
     price: 200,
     sellingPrice: 180,
     type: "unit",
@@ -127,6 +137,7 @@ export const products = [
   {
     id: "114",
     name: "Tropical Banana",
+    description: "Tasty and nutritious tropical bananas, full of energy.",
     price: 60,
     sellingPrice: 50,
     type: "gram",
@@ -139,6 +150,7 @@ export const products = [
   {
     id: "115",
     name: "Strawberries",
+    description: "Juicy and fresh strawberries for a delicious treat.",
     price: 70,
     sellingPrice: 60,
     type: "gram",
@@ -153,6 +165,7 @@ export const products = [
   {
     id: "116",
     name: "Whole Wheat Bread",
+    description: "Healthy whole wheat bread, perfect for daily consumption.",
     price: 30,
     sellingPrice: 25,
     type: "unit",
@@ -165,6 +178,7 @@ export const products = [
   {
     id: "117",
     name: "Sourdough Bread",
+    description: "Traditional sourdough bread with a unique flavor.",
     price: 35,
     sellingPrice: 28,
     type: "unit",
@@ -177,6 +191,7 @@ export const products = [
   {
     id: "118",
     name: "Baguette",
+    description: "Classic French baguette, crispy on the outside, soft on the inside.",
     price: 25,
     sellingPrice: 20,
     type: "unit",
@@ -189,6 +204,7 @@ export const products = [
   {
     id: "119",
     name: "Gluten-Free Bread",
+    description: "Delicious gluten-free bread, suitable for special diets.",
     price: 40,
     sellingPrice: 35,
     type: "unit",
@@ -203,6 +219,7 @@ export const products = [
   {
     id: "120",
     name: "Spaghetti",
+    description: "Classic spaghetti, ideal for Italian dishes.",
     price: 20,
     sellingPrice: 18,
     type: "gram",
@@ -215,6 +232,7 @@ export const products = [
   {
     id: "121",
     name: "Penne",
+    description: "Delicious penne pasta for a variety of recipes.",
     price: 18,
     sellingPrice: 16,
     type: "gram",
@@ -227,6 +245,7 @@ export const products = [
   {
     id: "122",
     name: "Macaroni",
+    description: "Classic macaroni, ideal for homemade mac and cheese.",
     price: 22,
     sellingPrice: 20,
     type: "gram",
@@ -241,6 +260,7 @@ export const products = [
   {
     id: "123",
     name: "Chocolate",
+    description: "Smooth and delicious chocolate for a sweet treat.",
     price: 10,
     sellingPrice: 8,
     type: "unit",
@@ -253,6 +273,7 @@ export const products = [
   {
     id: "124",
     name: "Gummy Bears",
+    description: "Colorful and chewy gummy bears, loved by all ages.",
     price: 15,
     sellingPrice: 12,
     type: "unit",
@@ -262,11 +283,11 @@ export const products = [
     ],
     subcategoryId: "6-2",
   },
-
   // Category 7: Ice Cream (7-1, 7-2, 7-3)
   {
     id: "125",
     name: "Vanilla Ice Cream",
+    description: "Creamy vanilla ice cream for a delightful dessert.",
     price: 25,
     sellingPrice: 20,
     type: "unit",
@@ -281,6 +302,7 @@ export const products = [
   {
     id: "126",
     name: "Whole Milk",
+    description: "Fresh whole milk, rich in nutrients and flavor.",
     price: 15,
     sellingPrice: 12,
     type: "unit",
@@ -293,6 +315,7 @@ export const products = [
   {
     id: "127",
     name: "Organic Yogurt",
+    description: "Thick and creamy organic yogurt for a healthy treat.",
     price: 35,
     sellingPrice: 30,
     type: "unit",
@@ -302,10 +325,12 @@ export const products = [
     ],
     subcategoryId: "8-1",
   },
+
   // Category 9: Breakfast (9-1, 9-2, 9-3)
   {
     id: "128",
     name: "Cereals",
+    description: "Crunchy and nutritious cereals for a quick breakfast.",
     price: 40,
     sellingPrice: 35,
     type: "gram",
@@ -313,13 +338,14 @@ export const products = [
       require("../../assets/getir/products/cereals1.jpg"),
       require("../../assets/getir/products/cereals2.jpg"),
     ],
-    subcategoryId: "9-1", // Cereals
+    subcategoryId: "9-1",
   },
 
   // Category 10: Cookies (10-1, 10-2, 10-3)
   {
     id: "129",
     name: "Chocolate Chip Cookies",
+    description: "Delicious cookies packed with chocolate chips.",
     price: 20,
     sellingPrice: 18,
     type: "adet",
@@ -327,13 +353,14 @@ export const products = [
       require("../../assets/getir/products/cookie2.jpg"),
       require("../../assets/getir/products/cookie1.jpg"),
     ],
-    subcategoryId: "10-1", // Chocolate Chip
+    subcategoryId: "10-1",
   },
 
   // Category 11: Fit Foods (11-1, 11-2, 11-3)
   {
     id: "130",
     name: "Protein Bars",
+    description: "High-protein bars to fuel your workout or day.",
     price: 50,
     sellingPrice: 45,
     type: "adet",
@@ -341,13 +368,14 @@ export const products = [
       require("../../assets/getir/products/bar1.jpg"),
       require("../../assets/getir/products/bar2.jpg"),
     ],
-    subcategoryId: "11-1", // Protein Bars
+    subcategoryId: "11-1",
   },
 
   // Category 12: Personal Care (12-1, 12-2, 12-3)
   {
     id: "131",
     name: "Skin Care Cream",
+    description: "Nourishing skin care cream for smooth, healthy skin.",
     price: 100,
     sellingPrice: 90,
     type: "unit",
@@ -362,6 +390,7 @@ export const products = [
   {
     id: "132",
     name: "Dog Food",
+    description: "Nutritious dog food to keep your pet healthy and happy.",
     price: 80,
     sellingPrice: 70,
     type: "unit",
@@ -376,6 +405,7 @@ export const products = [
   {
     id: "133",
     name: "Diapers",
+    description: "Soft and comfortable diapers for babies.",
     price: 60,
     sellingPrice: 50,
     type: "unit",
@@ -390,38 +420,41 @@ export const products = [
   {
     id: "135",
     name: "Surface Cleaner",
+    description: "Effective surface cleaner to keep your home spotless.",
     price: 35,
     sellingPrice: 30,
     type: "adet",
     images: [
       require("../../assets/getir/products/clean1.jpg"),
     ],
-    subcategoryId: "16-1", // Surface Cleaners
+    subcategoryId: "16-1",
   },
 
   // Category 17: Tech (17-1, 17-2, 17-3)
   {
     id: "136",
     name: "Airlops",
+    description: "Premium quality Airlops with advanced sound technology.",
     price: 150,
     sellingPrice: 130,
     type: "adet",
     images: [
       require("../../assets/getir/products/airpods1.jpg"),
     ],
-    subcategoryId: "17-1", // Headphones
+    subcategoryId: "17-1",
   },
 
   // Category 18: Home (18-1, 18-2, 18-3)
   {
     id: "137",
     name: "Furniture",
+    description: "High-quality furniture to enhance your living space.",
     price: 1000,
     sellingPrice: 900,
     type: "adet",
     images: [
       require("../../assets/getir/products/furniture1.jpg"),
     ],
-    subcategoryId: "18-1", // Furniture
+    subcategoryId: "18-1",
   },
 ];

@@ -11,6 +11,7 @@ import HeaderCartRight from "./header/part/HeaderCartRight";
 import useAuth from "../hooks/useAuth";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
+import ProductDetailScreen from "../screens/ProductDetailScreen";
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,26 @@ export default function AppNavigator() {
           <Stack.Screen
             name="CategoryDetail"
             component={CategoryDetailScreen}
+            options={{
+              headerShown: true,
+              headerStyle: { backgroundColor: "#5c3ebc" },
+              headerTitleAlign: "center",
+              headerTitle: () => (
+                <View>
+                  <Image
+                    resizeMode="contain"
+                    className="w-16 h-8"
+                    source={require("../../assets/logo.png")}
+                  />
+                </View>
+              ),
+              headerLeft: () => <HeaderLeftBack />,
+              headerRight: () => <HeaderCartRight />,
+            }}
+          ></Stack.Screen>
+           <Stack.Screen
+            name="ProductDetails"
+            component={ProductDetailScreen}
             options={{
               headerShown: true,
               headerStyle: { backgroundColor: "#5c3ebc" },

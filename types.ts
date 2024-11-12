@@ -48,5 +48,6 @@ export interface UserProps {
     sellingPrice: number;
     type: string;
     images?: string[];
-    subcategoryId: string;
+    subcategoryId?: string;
+    description?: string
   }
