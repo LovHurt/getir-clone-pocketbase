@@ -1,16 +1,18 @@
 // src/contexts/AuthContext.tsx
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Alert } from 'react-native';
+import React, { createContext, useState, useEffect, ReactNode } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Alert } from "react-native";
 
 interface User {
   email: string;
+  password?: string;
+  name?: string;
 }
 
 interface AuthContextProps {
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  register: (email: string, password: string) => Promise<void>;
+  register: (email: string, password: string, name: string) => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -31,12 +33,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const storedUser = await AsyncStorage.getItem('user');
+        const storedUser = await AsyncStorage.getItem("user");
         if (storedUser) {
           setUser(JSON.parse(storedUser));
         }
       } catch (error) {
-        console.log('Error loading user from storage', error);
+        console.log("Error loading user from storage", error);
       }
     };
 
@@ -45,33 +47,41 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const login = async (email: string, password: string) => {
     try {
-      const userData: User = { email };
-      await AsyncStorage.setItem('user', JSON.stringify(userData));
+      const userData: User = { email, password };
+      await AsyncStorage.setItem("user", JSON.stringify(userData));
       setUser(userData);
+      console.log(userData)
+      console.log("login çalştı")
     } catch (error: any) {
-      Alert.alert('Login Error', error.message || 'An error occured by logging.');
+      Alert.alert(
+        "Login Error",
+        error.message || "An error occured by logging."
+      );
       throw error;
     }
   };
 
-  const register = async (email: string, password: string) => {
+  const register = async (email: string, password: string, name: string) => {
     try {
-      const userData: User = { email };
-      await AsyncStorage.setItem('user', JSON.stringify(userData));
+      const userData: User = { email, password, name };
+      await AsyncStorage.setItem("user", JSON.stringify(userData));
       setUser(userData);
     } catch (error: any) {
-      Alert.alert('Register error', error.message || 'An error occured by register.');
+      Alert.alert(
+        "Register error",
+        error.message || "An error occured while registering."
+      );
       throw error;
     }
   };
 
   const logout = async () => {
     try {
-      await AsyncStorage.removeItem('user');
+      await AsyncStorage.removeItem("user");
       setUser(null);
     } catch (error) {
-      console.log('Logout error', error);
-      Alert.alert('Error', 'An error occured by logging out');
+      console.log("Logout error", error);
+      Alert.alert("Error", "An error occured by logging out");
     }
   };
 

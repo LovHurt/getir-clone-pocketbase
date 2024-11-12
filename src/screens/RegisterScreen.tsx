@@ -18,17 +18,18 @@ const RegisterScreen = ({ navigation }: any) => {
   const { register } = useAuth();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [name, setName] = useState<string>("");
 
   const handleRegister = async () => {
-    if (email === "" || password === "") {
-      Alert.alert("Hata", "Lütfen tüm alanları doldurun.");
+    if (email === "" || password === "" || name === "") {
+      Alert.alert("Error", "Please fill the blanks.");
       return;
     }
 
     try {
-      await register(email, password);
-      Alert.alert("Success", "Kayıt başarılı! Giriş yapabilirsiniz.", [
-        { text: "Okay", onPress: () => navigation.navigate("Login") },
+      await register(email, password, name);
+      Alert.alert("Success", "You are registered.", [
+        { text: "Okay" },
       ]);
     } catch (error) {
       console.log("registerscreen error 23 : ", error);
@@ -60,6 +61,13 @@ const RegisterScreen = ({ navigation }: any) => {
           value={password}
           onChangeText={setPassword}
           secureTextEntry
+          className="w-full px-4 py-3 bg-white border-2 mb-2 rounded-lg border-white"
+        />
+         <TextInput
+          placeholder="Name"
+          value={name}
+          onChangeText={setName}
+          autoCapitalize="characters"
           className="w-full px-4 py-3 bg-white border-2 mb-2 rounded-lg border-white"
         />
         <TouchableOpacity className="w-full border p-4 border-white bg-getirText">

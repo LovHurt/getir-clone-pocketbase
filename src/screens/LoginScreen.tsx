@@ -17,17 +17,19 @@ const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const navigateHome = () => navigation.navigate("home");
+
   const handleLogin = async () => {
     if (email === "" || password === "") {
       Alert.alert("Hata", "Lütfen tüm alanları doldurun.");
       return;
     }
-
     try {
       await login(email, password);
-      // Giriş başarılı olduğunda navigasyon AuthProvider tarafından yönetiliyor
+      console.log("login yalandan çalıştı");
+      navigateHome();
     } catch (error) {
-      // Hata zaten AuthContext içinde yönetiliyor
+      console.log(error);
     }
   };
 
@@ -59,11 +61,11 @@ const LoginScreen = ({ navigation }: any) => {
           secureTextEntry
           className="w-full px-4 py-3 bg-white border-2 mb-2 rounded-lg border-white"
         />
-        <TouchableOpacity className="w-full border px-36 py-4 border-white bg-getirText">
-          <Text
-            className="font-semibold text-xl text-black text-center border-1 border-getirText"
-            onPress={handleLogin}
-          >
+        <TouchableOpacity
+          onPress={handleLogin}
+          className="w-full border px-36 py-4 border-white bg-getirText"
+        >
+          <Text className="font-semibold text-xl text-black text-center border-1 border-getirText">
             Login
           </Text>
         </TouchableOpacity>
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#5d3ebc", 
+    backgroundColor: "#5d3ebc",
     padding: 16,
   },
   title: {
