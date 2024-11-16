@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import AppNavigator from "./src/navigators/AppNavigator";
 import { AuthProvider } from "./src/context/AuthContext";
+import { CartProvider } from "./src/context/CartContext";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +14,9 @@ export default function App() {
       <View className="mt-14"></View>
       <StatusBar style="auto" />
       <AuthProvider>
-        <AppNavigator />
+        <CartProvider>
+          <AppNavigator />
+        </CartProvider>
       </AuthProvider>
     </NavigationContainer>
   );
