@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useRoute } from "@react-navigation/native";
 import { ProductProps } from "../../types";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import useAuth from "../hooks/useAuth";
+import { useCart } from "../context/CartContext";
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
@@ -11,11 +13,30 @@ export default function ProductDetailScreen() {
   const { product } = route.params as { product: ProductProps };
   const [selectedProduct, setSelectedProduct] = useState<string>(product.id);
   const [quantity, setQuantity] = useState(1);
-
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
-  const decreaseQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
-
-  console.log(product);
+  
+  const {user} = useAuth();
+  const { dispatch } = useCart();
+  
+    const increaseQuantity = () => setQuantity((prev) => prev + 1);
+    const decreaseQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
+  
+    const handleAddToCart = () => {
+      if (!user) {
+        alert("Please log in to add items to your cart");
+        return;
+      }
+      dispatch({
+        type: "ADD_ITEM",
+        payload: {
+          productId: product.id,
+          productName: product.name,
+          productPrice: product.sellingPrice,
+          productQuantity: quantity,
+          productImage: product.images[0],
+        },
+      });
+      alert(`${product.name}, ${quantity} item(s) added to the cart!`);    
+    };
 
   return (
     <ScrollView className="flex-1 bg-white">
@@ -55,11 +76,10 @@ export default function ProductDetailScreen() {
             <Text className="text-xl font-bold text-gray-800">+</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity className="mt-8 bg-getirColor p-4 rounded-lg items-center">
+        <TouchableOpacity onPress={handleAddToCart} className="mt-8 bg-getirColor p-4 rounded-lg items-center">
             <Text className="text-lg font-bold text-getirText">Sepete Ekle</Text>
         </TouchableOpacity>
       </View>
-      <Text>ProductDetailScreen</Text>
     </ScrollView>
   );
 }

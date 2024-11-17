@@ -3,6 +3,7 @@ import React from "react";
 import { ProductProps } from "../../../types";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { Entypo } from "@expo/vector-icons";
+import { useCart } from "../../context/CartContext";
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
@@ -15,6 +16,21 @@ interface ProductItemProps {
 
 export default function ProductItem({ product }: ProductItemProps) {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const { dispatch } = useCart();
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        productId: product.id,
+        productName: product.name,
+        productPrice: product.sellingPrice,
+        productQuantity: 1, // Default olarak 1 adet ekliyoruz
+        productImage: product.images[0],
+      },
+    });
+    alert(`${product.name} sepete eklendi!`);
+  };
 
   return (
     <TouchableOpacity
@@ -50,6 +66,7 @@ export default function ProductItem({ product }: ProductItemProps) {
           height: 30,
         }}
         className="absolute border rounded-full flex-row justify-center items-center bg-white"
+        onPress={handleAddToCart}
       >
         <Entypo name="plus" size={22} color="#5d3ebd" />
       </TouchableOpacity>

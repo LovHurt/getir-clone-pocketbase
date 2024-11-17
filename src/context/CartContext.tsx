@@ -5,6 +5,7 @@ interface CartItem {
   productName: string;
   productPrice: number;
   productQuantity: number;
+  productImage: string;
 }
 
 interface CartState {
@@ -21,7 +22,8 @@ type CartAction =
   | { type: "ADD_ITEM"; payload: CartItem }
   | { type: "REMOVE_ITEM"; payload: string }
   | { type: "INCREMENT_ITEM"; payload: string }
-  | { type: "DECREMENT_ITEM"; payload: string };
+  | { type: "DECREMENT_ITEM"; payload: string }
+  | { type: "CLEAR_CART";}
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -108,13 +110,20 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
           : state.total,
       };
     }
+    case "CLEAR_CART": {
+      return {
+        ...state,
+        items: [],
+        total: 0,
+      };
+    }
     default:
       return state;
   }
 };
 
 const CartContext = createContext<{
-  state: CartState; 
+  state: CartState;
   dispatch: React.Dispatch<CartAction>;
 }>({
   state: initialCartState,
