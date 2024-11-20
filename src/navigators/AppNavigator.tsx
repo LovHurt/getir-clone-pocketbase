@@ -12,6 +12,7 @@ import useAuth from "../hooks/useAuth";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import ProductDetailScreen from "../screens/ProductDetailScreen";
+import CheckoutScreen from "../screens/CheckoutScreen";
 
 const Stack = createStackNavigator();
 
@@ -44,7 +45,7 @@ export default function AppNavigator() {
               headerRight: () => <HeaderCartRight />,
             }}
           ></Stack.Screen>
-           <Stack.Screen
+          <Stack.Screen
             name="ProductDetails"
             component={ProductDetailScreen}
             options={{
@@ -64,6 +65,25 @@ export default function AppNavigator() {
               headerRight: () => <HeaderCartRight />,
             }}
           ></Stack.Screen>
+           <Stack.Screen
+            name="Checkout"
+            component={CheckoutScreen}
+            options={{
+              headerShown: false,
+              headerStyle: { backgroundColor: "#5c3ebc" },
+              headerTitleAlign: "center",
+              headerTitle: () => (
+                <View>
+                  <Image
+                    resizeMode="contain"
+                    className="w-16 h-8"
+                    source={require("../../assets/logo.png")}
+                  />
+                </View>
+              ),
+              headerLeft: () => <HeaderLeftBack />,
+            }}
+          />
         </>
       ) : (
         <>
